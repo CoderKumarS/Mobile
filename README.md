@@ -48,3 +48,45 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+## Build for Android
+
+Download expo cli
+
+   npx expo install expo-dev-client
+   npm install -g eas-cli
+
+Login in expo cli
+
+   eas login
+
+Build the eas.json for configuration 
+
+   eas build:configure
+
+paste below code for android development in eas.json
+`
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "preview4": {
+      "distribution": "internal"
+    },
+    "production": {}
+  },`
+
+Run the build command 
+
+   eas build -p android --profile preview

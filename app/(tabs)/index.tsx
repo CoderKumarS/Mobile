@@ -1,4 +1,4 @@
-import { View, StyleSheet, Platform } from 'react-native';
+import { Text, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useState, useRef } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -6,6 +6,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { type ImageSource } from 'expo-image';
 import { captureRef } from 'react-native-view-shot';
 import domtoimage from 'dom-to-image';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Button from '@/components/Button';
 import ImageViewer from '@/components/ImageViewer';
@@ -91,6 +92,9 @@ export default function Index() {
 
   return (
     <GestureHandlerRootView className="flex-1 bg-[#25292e] items-center">
+      <div className='flex items-center justify-center bg-[#1e1e2a] h-20 mb-2 w-screen'>
+          <Text className="text-white text-2xl font-bold justify-self-center">Home</Text>
+        </div>
       <View className='flex-1'>
         <View ref={imageRef} collapsable={false}>
           <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
@@ -106,7 +110,7 @@ export default function Index() {
           </View>
         </View>
       ) : (
-        <View className="flex-[1/3] items-center">
+        <View className="absolute bottom-12 items-center">
           <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
           <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
         </View>
@@ -117,4 +121,3 @@ export default function Index() {
     </GestureHandlerRootView>
   );
 }
-

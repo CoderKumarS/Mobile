@@ -28,11 +28,11 @@ export default function TabLayout() {
           height: 50,
           backgroundColor: '#25292e',
         },
-        // headerShown: false,
-        headerStyle: { backgroundColor: '#25292e',},
-        headerShadowVisible: false,
-        headerTintColor: '#fff',
-        headerTitleAlign: 'center',
+        headerShown: false,
+        // headerStyle: { backgroundColor: '#25292e',},
+        // headerShadowVisible: false,
+        // headerTintColor: '#fff',
+        // headerTitleAlign: 'center',
       }}
     >
       {screens.map(({ name, title, icon }) => (

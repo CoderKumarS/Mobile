@@ -9,11 +9,24 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.coderkumars.login",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to your photo library to save images.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images."
+      },
+      "buildNumber": "1.0.0",
+      "icon": {
+        "dark": "./assets/icons/ios-dark.png",
+        "light": "./assets/icons/ios-light.png",
+        "tinted": "./assets/icons/ios-tinted.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "monochromeImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.coderkumars.login"
@@ -28,10 +41,14 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/icons/splash-icon-dark.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/icons/splash-icon-light.png",
+            "backgroundColor": "#000000"
+          }
         }
       ]
     ],
